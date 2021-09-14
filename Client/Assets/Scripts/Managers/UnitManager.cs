@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnitManager : MonoBehaviour
 {
     public float health;
-    public float maximumHealth;
+    public float maxHealth;
     public float chargeSpeed;
     public float walkSpeed;
     public float angularSpeed;
@@ -19,7 +19,7 @@ public class UnitManager : MonoBehaviour
     public GameObject deadBody;
     public GameObject healthBar;
 
-    int playerId;
+    int playerId = 1;
     bool selected = false;
     bool isUnderAttack = false;
     bool isAlive = true;
@@ -46,12 +46,11 @@ public class UnitManager : MonoBehaviour
         line.transform.localPosition.Set(0.0f, 0.2f, 0.0f);
         CreatePoints();
         line.enabled = false;
-        playerId = GetComponentInParent<PlayerManager>().camp;
     }
 
     void Update()
     {
-        healthBar.GetComponent<HealthBarManager>().SetBar(new Vector3(health / maximumHealth, 1.0f, 1.0f));
+        healthBar.GetComponent<HealthBarManager>().SetBar(new Vector3(health / maxHealth, 1.0f, 1.0f));
     }
 
     public bool IsUnderAttack()

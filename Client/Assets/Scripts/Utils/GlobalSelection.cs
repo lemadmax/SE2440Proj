@@ -18,15 +18,12 @@ public class GlobalSelection : MonoBehaviour
     Vector3[] verts;
     Vector3[] vecs;
 
+    const int rayCastLayer = 6;
+
     public bool IsUnitSelected()
     {
         return !selectTable.IsEmpty();
     }
-
-    //void Start()
-    //{
-    //    selectTable = GetComponent<SelectDict>();
-    //}
 
     void Update()
     {
@@ -81,7 +78,7 @@ public class GlobalSelection : MonoBehaviour
                 {
                     Ray ray = Camera.main.ScreenPointToRay(corner);
                     RaycastHit hitInfo;
-                    if(Physics.Raycast(ray, out hitInfo, 50000.0f, (1 << 8)))
+                    if(Physics.Raycast(ray, out hitInfo, 50000.0f, (1 << rayCastLayer)))
                     {
                         verts[i] = new Vector3(hitInfo.point.x, hitInfo.point.y, hitInfo.point.z);
                         vecs[i] = ray.origin - hitInfo.point;

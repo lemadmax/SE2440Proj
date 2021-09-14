@@ -5,20 +5,31 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public int camp;
+    public int playerId;
+    public int gold;
+    public GameObject gameManager;
 
-    public void init()
-    {
-        camp = 0;   
-    }
-    // Start is called before the first frame update
+    GameSetting gameSetting;
+
+    List<GameObject> units = new List<GameObject>();
+    List<GameObject> buildings = new List<GameObject>();
+
     void Start()
     {
-        
+        gameSetting = gameManager.GetComponent<GameSetting>();
+        GameObject barrack = Instantiate(gameSetting.BuildingPrefabs[camp, (int)Building.Barracks], transform);
+        buildings.Add(barrack);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (playerId > 0) return;
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            
+            GameObject infantry = Instantiate(gameSetting.UnitPrefabs[camp, (int)Unit.Infantry], new Vector3(transform.position.x, transform.position.y, transform.position.z + 15.0f), new Quaternion());
+            infantry.GetComponent<UnitManager>().init(playerId);
+            units.Add(infantry);
+        }
     }
 }

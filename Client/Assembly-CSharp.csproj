@@ -56,16 +56,17 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Controllers\MovementController.cs" />
     <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Managers\HealthBarManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\CursorManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Utils\SelectDict.cs" />
     <Compile Include="Assets\Scripts\Utils\GlobalSelection.cs" />
-    <Compile Include="Assets\Scripts\Utils\Utils.cs" />
-    <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\Utils\GameSetting.cs" />
     <Compile Include="Assets\Scripts\Managers\UnitManager.cs" />
-    <Compile Include="Assets\Scripts\Controllers\MovementController.cs" />
+    <Compile Include="Assets\Scripts\Utils\GameSetting.cs" />
+    <Compile Include="Assets\Scripts\Managers\HealthBarManager.cs" />
+    <Compile Include="Assets\Scripts\Utils\Utils.cs" />
+    <Compile Include="Assets\Scripts\Managers\CursorManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\BuildingManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Toby Fredson\Rocky Hills Environment - Light Pack\Legacy Project\Legacy Project_Read Me!.txt" />
